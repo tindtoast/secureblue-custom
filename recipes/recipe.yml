@@ -31,10 +31,6 @@ modules:
         - kvantum
         - neovim
         - tailscale
-        - uutils-coreutils
-    remove:
-      packages:
-        - coreutils
 
   # - type: akmods
     # base: main
