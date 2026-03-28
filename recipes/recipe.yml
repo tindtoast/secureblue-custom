@@ -1,11 +1,11 @@
 ---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 name: secureblue-custom
 description: Personal build of secureblue Kinoite
 
 base-image: ghcr.io/secureblue/kinoite-main-hardened
 image-version: latest
 
-# yaml-language-server: $schema=https://schema.blue-build.org/module-stage-list-v1.json
 modules:
   - type: files
     files:
@@ -26,14 +26,12 @@ modules:
     - https://openrazer.github.io/hardware:razer.repo
     - 
     install:
-      packages:
       - kitty
       - kvantum
       - neovim
       - tailscale
       - uutils-coreutils
     remove:
-      packages:
       - coreutils
 
   - type: akmods
