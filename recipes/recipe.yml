@@ -37,7 +37,7 @@ modules:
       - coreutils
 
   - type: akmods
-      base: main
+    base: main
       install:
         - openrazer
         - v4l2loopback
