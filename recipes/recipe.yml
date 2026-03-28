@@ -20,18 +20,21 @@ modules:
        - Noto Sans
        - Poppins
 
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      - https://openrazer.github.io/hardware:razer.repo
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        - https://openrazer.github.io/hardware:razer.repo
     install:
-      - kitty
-      - kvantum
-      - neovim
-      - tailscale
-      - uutils-coreutils
+      packages:
+        - kitty
+        - kvantum
+        - neovim
+        - tailscale
+        - uutils-coreutils
     remove:
-      - coreutils
+      packages:
+        - coreutils
 
   # - type: akmods
     # base: main
