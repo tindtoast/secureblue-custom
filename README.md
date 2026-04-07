@@ -1,38 +1,38 @@
 # secureblue-custom &nbsp; [![bluebuild build badge](https://github.com/tindtoast/secureblue-custom/actions/workflows/build.yml/badge.svg)](https://github.com/tindtoast/secureblue-custom/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
-
-After setup, it is recommended you update this README to describe your custom image.
+*A modified build of secureblue made to fit my own preference.*
 
 ## Installation
 
 > [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+> If you haven't noticed, this is a build made for ***myself***. <br>
+You may use this image if you wish but keep in mind, I am **not** responsible for any issues that occur when you use this. 
 
-To rebase an existing atomic Fedora installation to the latest build:
-
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/tindtoast/secureblue-custom:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/tindtoast/secureblue-custom:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
-
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
-
-## ISO
-
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/how-to/generate-iso/#_top). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+1. Install [secureblue](https://secureblue.dev/)
+2. Trust this image temporarily
+    ```
+    run0 podman image trust set -t accept ghcr.io/tindtoast
+    ```
+3. Rebase to the unsigned image:
+    ```
+    rpm-ostree rebase ostree-unverified-registry:ghcr.io/tindtoast/secureblue-custom:latest
+    ```
+4. Reboot to complete the rebase:
+    ```
+    systemctl reboot
+    ```
+5. Then rebase to the signed image:
+    ```
+    rpm-ostree rebase ostree-image-signed:docker://ghcr.io/tindtoast/secureblue-custom:latest
+    ```
+6. Reboot again to complete the installation
+    ```
+    systemctl reboot
+    ```
+7. Restore the default container policy (to prevent `ujust audit` warnings)
+    ```
+    run0 cp /usr/etc/containers/policy.json /etc/containers/policy.json
+    ```
 
 ## Verification
 
