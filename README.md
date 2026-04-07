@@ -31,7 +31,7 @@ You may use this image if you wish but keep in mind, I am **not** responsible fo
     ```
     systemctl reboot
     ```
-7. Restore the default container policy (to prevent `ujust audit` warnings)
+7. Restore the default container policy (to prevent `ujust audit-secureblue` warnings)
     ```
     run0 cp /usr/etc/containers/policy.json /etc/containers/policy.json
     ```
