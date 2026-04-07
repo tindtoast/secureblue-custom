@@ -1,3 +1,6 @@
+# the new build.yml is here
+# https://github.com/secureblue/secureblue/blob/live/.github/workflows/shared-runner-setup/action.yml
+
 name: bluebuild
 on:
   schedule:
