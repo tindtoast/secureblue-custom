@@ -2,7 +2,7 @@
 [![bluebuild build badge](https://github.com/tindtoast/secureblue-custom/actions/workflows/build.yml/badge.svg)](https://github.com/tindtoast/secureblue-custom/actions/workflows/build.yml)
 [![provenance verification](https://github.com/tindtoast/secureblue-custom/actions/workflows/provenance.yml/badge.svg)](https://github.com/tindtoast/secureblue-custom/actions/workflows/provenance.yml)
 
-*A modified build of secureblue made to fit my own preference.*
+*A modified build of secureblue kinoite made to fit my own preferences.*
 
 ## Installation
 
