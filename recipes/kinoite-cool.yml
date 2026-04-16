@@ -1,4 +1,4 @@
-name: kinoite-cool
+name: tiwil-kinoite-cool
 description: My own customized build of secureblue kinoite BUT TESTING?!!
 
 base-image: ghcr.io/secureblue/kinoite-main-hardened

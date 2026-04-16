@@ -1,4 +1,4 @@
-name: kinoite
+name: tiwil-kinoite
 description: My own customized build of secureblue kinoite
 
 base-image: ghcr.io/secureblue/kinoite-main-hardened
