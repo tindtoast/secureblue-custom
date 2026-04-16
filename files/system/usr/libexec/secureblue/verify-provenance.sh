@@ -15,7 +15,7 @@ image_ref=$(rpm-ostree status --booted --json | jq -cr '.deployments[0]."contain
 image_ref=${image_ref#*:docker://}
 case "${image_ref}" in
     ghcr.io/tindtoast/*)
-        source_uri='github.com/tindtoast/secureblue-custom'
+        source_uri='github.com/tindtoast/tiwil'
         ;;
     *)
         echo "WARNING: Unknown image reference '${image_ref}'; unable to check provenance."

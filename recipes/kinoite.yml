@@ -1,0 +1,11 @@
+name: kinoite
+description: My own customized build of secureblue kinoite
+
+base-image: ghcr.io/secureblue/kinoite-main-hardened
+image-version: latest
+
+modules:
+  - from-file: common.yml
+  - type: rpm-ostree
+    install:
+      - kvantum

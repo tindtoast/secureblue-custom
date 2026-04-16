@@ -1,0 +1,35 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+modules:
+  # - type: akmods
+    # base: main
+    # install:
+      # - openrazer
+      # - v4l2loopback
+
+  - type: dnf
+    repos:
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+    install:
+      packages:
+        - android-tools
+        - kitty
+        - neovim
+        - tailscale
+        - traceroute
+
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+       - JetBrainsMono
+      google-fonts:
+       - Noto Sans
+       - Poppins
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully

@@ -35,7 +35,8 @@ jobs:
       fail-fast: false 
       matrix:
         recipe:
-          - recipe.yml
+          - kinoite.yml
+          - kinoite-cool.yml
     steps:
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -74,7 +75,7 @@ jobs:
           echo "BASE_IMAGE=$(yq -r '."base-image"' "./recipes/${RECIPE}")" >> "${GITHUB_OUTPUT}"
           echo "BASE_IMAGE_VERSION=$(yq -r '."image-version"' "./recipes/${RECIPE}")" >> "${GITHUB_OUTPUT}"
 
-          FULL_IMAGE_REF="ghcr.io/tindtoast/secureblue-custom:latest"
+          FULL_IMAGE_REF="ghcr.io/tindtoast/tiwil:latest"
           echo "FULL_IMAGE_REF=${FULL_IMAGE_REF}" >> "${GITHUB_OUTPUT}"
 
       - name: Install slsa-verifier

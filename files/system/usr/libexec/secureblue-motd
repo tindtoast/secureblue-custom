@@ -10,7 +10,7 @@ set -euo pipefail
 rpm_ostree_status=$(rpm-ostree status --json --booted)
 full_image_ref=$(jq -cr '.deployments[0]."container-image-reference"' <<<"$rpm_ostree_status")
 image_ref_name=${full_image_ref##*/}
-if [[ "$image_ref_name" == *custom:* ]]; then
+if [[ "$image_ref_name" == *tiwil* ]]; then
     image_tag=${image_ref_name##*:}
 else
     image_tag=''
