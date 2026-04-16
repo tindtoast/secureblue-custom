@@ -6,6 +6,6 @@ image-version: br-next-44
 
 modules:
   - from-file: common.yml
-  - type: rpm-ostree
+  - type: dnf
     install:
       - kvantum
